@@ -6,7 +6,7 @@
 # --- Required options --- #
 ############################
 
-title: 叁
+title: 叁的技术博客
 author: 叁
 
 ###############################################
@@ -16,21 +16,6 @@ author: 叁
 navbar-links:
   博客: "/"
   About: "about"
-  Games: "Games"
-
-################
-# --- Logo --- #
-################
-
-avatar: "https://pic4.zhimg.com/v2-3e65b35673b824aff8197d9ce3fed0ed_r.jpg"
-round-avatar: true
-
-#####################################
-# --- Footer social media links --- #
-#####################################
-
-social-network-links:
-  rss: true
 
 ###########################
 # --- General options --- #
@@ -40,9 +25,9 @@ url: "https://AneSan333.github.io"
 baseurl: ""
 
 share-links-active:
-  twitter: true
-  facebook: true
-  linkedin: true
+  twitter: false
+  facebook: false
+  linkedin: false
   vk: false
   reddit: false
 
@@ -51,11 +36,10 @@ title-on-all-pages: true
 excerpt_length: 50
 feed_show_excerpt: false
 feed_show_tags: false
-post_search: true
-edit_page_button: true
+post_search: false
+edit_page_button: false
 navbar-var-length: false
-
-rss-description: 我的技术、技能学习记录（持续更新版）
+remove-ads: true
 
 ######################################
 # --- Colours / background image --- #
@@ -85,11 +69,6 @@ site-css:
 date_format: "%B %-d, %Y"
 excerpt_separator: "<!--more-->"
 
-collections:
-  Games:
-    output: true
-    permalink: /Games/:title/
-
 #################################################################################
 # --- You don't need to touch anything below here (but you can if you want) --- #
 #################################################################################
@@ -113,13 +92,7 @@ defaults:
     values:
       layout: "post"
       comments: true
-      social-share: true
-  -
-    scope:
-      path: ""
-      type: "Games"
-    values:
-      layout: "page"
+      social-share: false
   -
     scope:
       path: ""
@@ -136,6 +109,7 @@ exclude:
   - README.md
   - screenshot.png
   - docs/
+  - templates/
 
 plugins:
   - jekyll-paginate

@@ -5,28 +5,30 @@ layout: page
 {{ content }}
 
 {% assign posts = paginator.posts | default: site.posts %}
-{% assign clay_cards = "clay-card--pink,clay-card--teal,clay-card--lavender,clay-card--peach,clay-card--ochre,clay-card--cream" | split: "," %}
 
-<ul class="posts-list list-unstyled clay-posts-grid" role="list">
-  {% for post in posts %}
-  {% assign card_index = forloop.index0 | modulo: 6 %}
-  {% assign card_class = clay_cards[card_index] %}
-  <li class="post-preview clay-post-card {{ card_class }}">
-    <article>
-      <a class="clay-post-card__link" href="{{ post.url | absolute_url }}">
-        <h2 class="post-title clay-post-card__title">{{ post.title | strip_html }}</h2>
-      </a>
-    </article>
-  </li>
-  {% endfor %}
-</ul>
+<section class="home-articles-section" aria-labelledby="home-articles-heading">
+  <div class="home-articles-section__header">
+    <h2 id="home-articles-heading" class="home-articles-section__title">文章</h2>
+  </div>
+
+  <ul class="home-articles-list list-unstyled" role="list">
+    {% for post in posts %}
+    <li class="home-article-item">
+      <article>
+        <a class="home-article-item__title-link" href="{{ post.url | absolute_url }}">
+          <h3 class="home-article-item__title">{{ post.title | strip_html }}</h3>
+        </a>
+      </article>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
 
 {% if paginator.total_pages > 1 %}
 <ul class="pagination main-pager clay-pagination">
   {% if paginator.previous_page %}
   <li class="page-item previous">
     <a class="page-link" href="{{ paginator.previous_page_path | absolute_url }}">
-      <i class="fas fa-arrow-left" alt="Newer Posts"></i>
       <span class="d-none d-sm-inline-block">Newer Posts</span>
     </a>
   </li>
@@ -35,7 +37,6 @@ layout: page
   <li class="page-item next">
     <a class="page-link" href="{{ paginator.next_page_path | absolute_url }}">
       <span class="d-none d-sm-inline-block">Older Posts</span>
-      <i class="fas fa-arrow-right" alt="Older Posts"></i>
     </a>
   </li>
   {% endif %}
