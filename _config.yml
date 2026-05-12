@@ -17,6 +17,13 @@ navbar-links:
   博客: "/"
   About: "about"
 
+################
+# --- Logo --- #
+################
+
+avatar: "https://pic4.zhimg.com/v2-3e65b35673b824aff8197d9ce3fed0ed_r.jpg"
+round-avatar: true
+
 ###########################
 # --- General options --- #
 ###########################
